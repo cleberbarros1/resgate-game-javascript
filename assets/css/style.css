@@ -1,0 +1,369 @@
+@font-face {
+	font-family:Titulo;
+	src:url(../fontes/ANODETONOONE.TTF);
+}
+
+h1 {
+	font-family:Titulo;
+	font-size:40px;
+	color:#603A03;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+	  background-image: url(../img/fundo.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+#container{
+	width:950px;
+	position:relative;
+}
+
+#fundoGame {
+	width:950px;
+	height:630px;
+	background-image:url(../img/fundo_game.jpg);
+	border-color:#FFF;
+	border-style:solid;
+}
+
+#jogador {
+	width:256px;
+	height:66px;
+	position:absolute;
+	left:8px;
+	top:109px;
+  background-image:url(../img/apache.png);
+  transition: .1s;
+
+}
+
+#inimigo1 {
+	width: 256px;
+	height: 66px;
+	position: absolute;
+	left: 689px;
+	top: 253px;
+	background-image:url(../img/inimigo1.png);
+	
+}
+
+#inimigo2 {
+	width: 165px;
+	height: 70px;
+	position: absolute;
+	left: 775px;
+	top: 447px;
+	background-image: url(../img/inimigo2.png);
+}
+
+#amigo {
+	width: 44px;
+	height: 51px;
+	position: absolute;
+	left: 10px;
+	top: 464px;
+	background-image:url(../img/amigo.png);
+}
+
+#inicio {
+	width:350px;
+	height:300px;
+	background-color:#FFF;
+ 	margin-left:auto;
+    margin-right:auto;
+ 	margin-top:100px;
+	text-align:center;
+	padding:10px;
+
+}
+
+
+.anima1 {
+	background-image:url(../img/helicoptero.png);
+	animation:play .1s steps(2) infinite, coming .2s ease forwards;
+
+      -webkit-animation: play .1s steps(2) infinite;
+       -moz-animation: play .1s steps(2) infinite;
+       -ms-animation: play .1s steps(2) infinite;
+       -o-animation: play .1s steps(2) infinite;
+}
+
+.coming {
+
+	animation:play .1s steps(2) infinite, coming .2s ease forwards, coming .7s ease forwards, rotating 2s ease forwards;
+      -webkit-animation:play .1s steps(2) infinite, coming .2s ease forwards, coming .7s ease forwards, rotating 2s ease forwards;
+}
+
+@keyframes coming {
+    from {left: -256px; top: 8px; opacity: 0;}
+    to {left: 8px; top: 109px; opacity: 1;}
+}
+
+@keyframes rotating {
+    0% {transform: rotate(-32deg);}
+    50% {transform: rotate(25deg)}
+    100% {transform: rotate(0deg)}
+}
+
+@keyframes play {
+	from {background-position:0px;}
+	to {background-position:-512px;}
+}
+
+
+@-webkit-keyframes play {
+   from { background-position:0px; }
+     to { background-position: -512px; }
+}
+
+@-moz-keyframes play {
+   from { background-position:0px; }
+     to { background-position: -512px; }
+}
+
+@-ms-keyframes play {
+   from { background-position:0px; }
+     to { background-position: -512px; }
+}
+
+@-o-keyframes play {
+   from { background-position:0px; }
+     to { background-position: -512px; }
+}
+
+
+.anima2 {
+    background-image:url(../imgs/inimigo1.png);
+    animation: play .2s steps(2) infinite;
+    -webkit-animation: play .2s steps(2) infinite;
+    -moz-animation: play .2s steps(2) infinite;
+    -ms-animation: play .2s steps(2) infinite;
+    -o-animation: play .2s steps(2) infinite; 
+}
+
+
+.anima3 {
+	background-image:url(../imgs/amigo.png);
+	animation:play2 .9s steps(12) infinite;
+	-webkit-animation: play2 .9s steps(12) infinite;
+       -moz-animation: play2 .9s steps(12) infinite;
+        -ms-animation: play2 .9s steps(12) infinite;
+         -o-animation: play2 .9s steps(12) infinite;
+}
+
+@keyframes play2 {
+	from {background-position:0px;}
+	to {background-position:-528px;}
+}
+
+@-webkit-keyframes play2 {
+   from { background-position:    0px; }
+     to { background-position: -528px; }
+}
+
+@-moz-keyframes play2 {
+   from { background-position:    0px; }
+     to { background-position: -528px; }
+}
+
+@-ms-keyframes play2 {
+   from { background-position:    0px; }
+     to { background-position: -528px; }
+}
+
+@-o-keyframes play2 {
+   from { background-position:    0px; }
+     to { background-position: -528px; }
+}
+
+
+#disparo {
+	width: 41px;
+	height: 14px;
+	position: absolute;
+	background-image: url(../img/disparo2.png);
+}
+
+#disparo2 {
+	width: 41px;
+	height: 14px;
+	position: absolute;
+	background-image: url(../img/disparo2.png);
+}
+
+#gameOver_end {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 100px;
+  color: white;
+  font-family:Titulo;
+  margin-left: 170px;
+  margin-top: 230px;
+
+}
+
+.text_go{
+  margin: 0;
+}
+
+.botaoTelaInicio, #botaoStart {
+  font-size: 30px;
+  padding: 10px 30px;
+  border: none;
+  opacity: 0.5;
+  color: white;
+  background-color: rgb(8, 68, 8);
+  scale: 0.8;
+  transition: .2s ease all;
+  cursor: pointer;
+  font-family: 'Arial Black', Helvetica, sans-serif;
+}
+
+
+.botaoTelaInicio:hover, #botaoStart:hover {
+  scale: 1;
+  opacity: 1;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#explosao1 {
+	width:225px;
+	height:87px;
+	position:absolute;
+  background-image: url(../img/explosao.png);
+  animation: explode 1s forwards;
+}
+
+#explosao2 {
+	width:225px;
+	height:87px;
+	position:absolute;
+  background-image: url(../img/explosao.png);
+  animation: explode 1s forwards;
+}
+
+#amigoDeath {
+	width:44px;
+	height:51px;
+	position:absolute;
+  background-image: url(../img/amigo_morte.png);
+  animation: amigoMorre .9s steps(7) infinite;
+  -webkit-animation: amigoMorre 1s steps(7) forwards;
+}
+
+@keyframes explode {
+  0% {opacity: 1; width: 0px;}
+  50% {opacity: 1;}
+  100% {opacity: 0; width: 235px;}
+}
+
+@keyframes amigoMorre {
+  0% {background-position: 0px;}
+  90% {opacity: 1;}
+  100% {background-position: -308px; opacity: 0;}
+}
+
+#placar {
+	width: 450px;
+	height: 50px;
+	position: absolute;
+	left: 10px;
+	top: 570px;
+}
+
+#placar2 {
+  color: white;
+  font-size:40px;
+}
+
+#scoreNum {
+	font-family:Titulo;
+	font-size:30px;
+	color:#FFF
+}
+
+.score {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:20px;
+	color:#FFF
+}
+
+
+#energia {
+	width: 140px;
+	height: 38px;
+	position: absolute;
+	left: 775px;
+	top: 7px;	
+  background-image: url(../img/energia3.png);
+}
+
+#scoreGain, #scoreGain2, #scoreGain3 {
+	font-family:Titulo;
+	font-size:30px;
+	color:#FFF;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  animation: scoreAnim 1s forwards;
+}
+
+#scoreGain3 {
+	font-family:Titulo;
+	font-size:30px;
+	color:rgb(3, 209, 3);
+  top: 0px;
+  left: 0px;
+  position: absolute;
+}
+
+@keyframes scoreAnim{
+  0% {opacity: 0; transform: rotate(0deg);}
+  50% {opacity: 1; color: white;}
+  80% {opacity: 1; transform: rotate(360deg); color: rgb(233, 236, 91);}
+  100% {opacity: 0; transform: translateY(-20px); scale: 2;}
+}
+
+@keyframes damageReceived {
+  0% {opacity: .5;}
+  50% {opacity: 1;}
+  100% {opacity: .5;}
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: 10px 50px;
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  opacity: .5;
+  transition: .2s;
+  cursor: pointer;
+  scale: .7;
+}
+
+footer:hover {
+  opacity: 1;
+  transform: translate(10px,-10px);
+  box-shadow: 5px 5px 7px black;
+  scale: 1;
+  
+}
